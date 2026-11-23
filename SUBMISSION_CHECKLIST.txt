@@ -1,0 +1,7 @@
+Submit one Google Drive folder with authorized reviewer Viewer access containing:
+[ ] GitHub repository URL with finished webhook listener and no .env/secrets
+[ ] JSON schema mapping document or Google Doc link (same nine fields as SCHEMAS/)
+[ ] Genuine text test execution log showing signature checks, response status, payload mapping and receiver success
+[ ] README with Node requirements, setup, environment variables, local fixture and Stripe CLI instructions
+[ ] Brief COMPLETION_NOTE identifying what was actually tested
+Do not claim a Stripe CLI test occurred unless run under authorized credentials.

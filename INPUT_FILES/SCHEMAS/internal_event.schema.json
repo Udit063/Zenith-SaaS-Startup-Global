@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Zenith payment event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "event_id",
+    "event_type",
+    "transaction_id",
+    "payment_intent",
+    "customer_email",
+    "amount_total",
+    "currency",
+    "payment_status",
+    "occurred_at"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "event_type": {
+      "const": "checkout.session.completed"
+    },
+    "transaction_id": {
+      "type": "string"
+    },
+    "payment_intent": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "customer_email": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "amount_total": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Smallest currency unit, paise for INR"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "payment_status": {
+      "type": "string"
+    },
+    "occurred_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

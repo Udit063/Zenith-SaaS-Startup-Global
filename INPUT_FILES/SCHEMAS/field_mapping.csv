@@ -1,0 +1,10 @@
+Internal field,Stripe source,Rule
+event_id,event.id,Required event ID
+event_type,event.type,Only checkout.session.completed
+transaction_id,event.data.object.id,Session ID
+payment_intent,event.data.object.payment_intent,Nullable
+customer_email,event.data.object.customer_details.email,Nullable
+amount_total,event.data.object.amount_total,Numeric in paise; do not divide by 100
+currency,event.data.object.currency,Lowercase currency
+payment_status,event.data.object.payment_status,Required status
+occurred_at,event.created,UTC ISO 8601 timestamp

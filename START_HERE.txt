@@ -1,0 +1,24 @@
+ZENITH SAAS STARTUP GLOBAL | STRIPE PAYMENT WEBHOOK INTEGRATION
+Job ID: 0bamD7kYbtBsGd27yN2q | Budget: INR 707 | Due: 23 November 2026 | Duration: 1 business day
+
+OBJECTIVE
+Implement a secure Stripe checkout.session.completed event receiver, transform its verified payment metadata into the specified internal JSON schema, and forward it to the local logging receiver.
+
+INPUTS
+INPUT_FILES/STARTER/ (server starter and integration TODOs)
+INPUT_FILES/MOCK_RECEIVER/receiver.js (working internal destination)
+INPUT_FILES/FIXTURES/ (signed-test event source payloads)
+INPUT_FILES/SCHEMAS/ (required output fields and mapping)
+INPUT_FILES/TECHNICAL_SPECIFICATION.txt, IMPLEMENTATION_CHECKLIST.csv and README_SETUP.txt
+
+STEPS
+1. Review the technical specification, schema, fixtures and setup instructions.
+2. Start the supplied mock receiver and inspect its health endpoint.
+3. Complete the three functions in STARTER/src/integration.js: signature verification, schema mapping and forwarding.
+4. Reject unsigned/invalid requests, handle missing optional fields, network timeouts and duplicate delivery.
+5. Test with the provided signed fixture tool; optionally verify via Stripe CLI with your authorized test account.
+6. Save genuine test logs, confirm 200 responses and write your own README documenting configuration, security and mapping.
+7. Submit the repository link, schema mapping document and test execution log in one authorized view-only Google Drive folder with a brief completion note.
+
+ACCEPTANCE
+Valid signature required before parsing; no API secrets committed; exact nine-field payload schema; robust HTTP status and timeout handling; verified local receiver delivery. The freelancer must complete the integration; supplied code is a starting point.

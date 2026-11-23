@@ -1,0 +1,10 @@
+ZENITH SAAS | PAYMENT EVENT LOGGING
+Event: checkout.session.completed only
+Local webhook: POST http://127.0.0.1:4242/webhooks/stripe
+Receiver: POST http://127.0.0.1:4545/internal/events
+Money: amount_total in smallest currency unit (paise for INR); currency lowercase.
+Receiver must return 200 OK for valid schema. Missing required fields return 422.
+Security: read raw bytes, validate Stripe-Signature using endpoint secret and reject stale or invalid signatures; never process unverified payloads.
+Forwarding: POST application/json, 3-second timeout by default, predictable error responses, no secret logging.
+Idempotency: avoid sending duplicate event IDs more than once when events retry; describe policy in README.
+External deployment and real payment processing are outside the local integration scope.

@@ -1,0 +1,24 @@
+{
+  "id": "evt_zenith_20261123_001",
+  "object": "event",
+  "api_version": "2024-06-20",
+  "created": 1795395000,
+  "type": "checkout.session.completed",
+  "livemode": false,
+  "data": {
+    "object": {
+      "id": "cs_zenith_checkout_001",
+      "object": "checkout.session",
+      "payment_intent": "pi_zenith_001",
+      "customer_details": {
+        "email": "accounts@example.net"
+      },
+      "amount_total": 149900,
+      "currency": "inr",
+      "payment_status": "paid",
+      "metadata": {
+        "order_ref": "ZN-2041"
+      }
+    }
+  }
+}

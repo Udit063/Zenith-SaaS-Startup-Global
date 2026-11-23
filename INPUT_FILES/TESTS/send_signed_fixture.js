@@ -1,0 +1,10 @@
+import {readFileSync} from 'node:fs';
+import {createHmac} from 'node:crypto';
+const target=process.env.WEBHOOK_URL||'http://127.0.0.1:4242/webhooks/stripe';
+const secret=process.env.TEST_WEBHOOK_SECRET||'whsec_local_fixture_only';
+const raw=readFileSync(new URL('../FIXTURES/checkout_session_completed.json',import.meta.url));
+const ts=Math.floor(Date.now()/1000);
+const digest=createHmac('sha256',secret).update(`${ts}.${raw.toString('utf8')}`).digest('hex');
+const response=await fetch(target,{method:'POST',headers:{'content-type':'application/json','stripe-signature':`t=${ts},v1=${digest}`},body:raw});
+console.log(`HTTP ${response.status}: ${await response.text()}`);
+if(response.status!==200)process.exitCode=1;

@@ -1,0 +1,13 @@
+Check,Expected verification,Result,Notes
+Signature header valid,Valid signed request accepted,,
+Signature invalid,Invalid signature rejected with HTTP 400,,
+Missing header,Rejected with HTTP 400,,
+Payload mapping,Exact nine-field schema,,
+Optional fields,Null-safe payment intent/email,,
+Receiver success,HTTP 200 response,,
+Receiver failure,Non-2xx reported safely,,
+Network timeout,Timeout handled gracefully,,
+Duplicate event,Second delivery not forwarded twice,,
+CLI trigger,Actual Stripe CLI checkout.session.completed simulation or local signed fixture,,
+Secrets,No credentials in committed files,,
+README,Setup and environment documented,,

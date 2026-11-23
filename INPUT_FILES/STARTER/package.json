@@ -1,0 +1,4 @@
+{
+ "name":"zenith-stripe-webhook-integration","version":"1.0.0","private":true,"type":"module",
+ "scripts":{"start":"node src/listener.js","receiver":"node ../MOCK_RECEIVER/receiver.js","fixture":"node ../TESTS/send_signed_fixture.js","test:inputs":"node ../TESTS/verify_inputs.js"},"engines":{"node":">=20"}
+}
